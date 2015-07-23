@@ -7,8 +7,6 @@ import android.os.Build;
 import android.util.AttributeSet;
 import android.widget.LinearLayout;
 
-import me.mattak.aspect_ratio_layout.R;
-
 public class FixedAspectRatioLinearLayout extends LinearLayout {
     private int mAspectRatioWidth = 1;
     private int mAspectRatioHeight = 1;

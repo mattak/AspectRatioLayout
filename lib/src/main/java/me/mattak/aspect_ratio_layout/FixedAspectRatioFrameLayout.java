@@ -8,8 +8,6 @@ import android.util.AttributeSet;
 import android.view.View;
 import android.widget.FrameLayout;
 
-import me.mattak.aspect_ratio_layout.R;
-
 public class FixedAspectRatioFrameLayout extends FrameLayout {
     private int mAspectRatioWidth = 1;
     private int mAspectRatioHeight = 1;
