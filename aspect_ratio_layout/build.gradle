@@ -14,6 +14,7 @@ def userName    = 'Takuma Maruyama'
 def userEmail   = 'mattak.me@gmail.com'
 def gitUrl      = 'https://github.com/mattak/AspectRatioLayout.git'
 def siteUrl     = 'https://github.com/mattak/AspectRatioLayout'
+def issueUrl    = 'https://github.com/mattak/AspectRatioLayout/issues'
 
 android {
     compileSdkVersion 22
@@ -45,12 +46,13 @@ bintray {
     configurations = ['archives']
 
     pkg {
-        repo       = 'maven'
-        name       = archiveName
-        vcsUrl     = gitUrl
-        websiteUrl = siteUrl
-        licenses   = ['Apache-2.0']
-        labels     = ['android']
+        repo            = 'maven'
+        name            = archiveName
+        vcsUrl          = gitUrl
+        websiteUrl      = siteUrl
+        issueTrackerUrl = issueUrl
+        licenses        = ['Apache-2.0']
+        labels          = ['android']
         publicDownloadNumbers = true
     }
 }
