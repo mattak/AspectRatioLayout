@@ -1,0 +1,108 @@
+plugins {
+    id 'com.jfrog.bintray' version '1.2'
+}
+
+apply plugin: 'com.android.library'
+apply plugin: 'com.github.dcendents.android-maven'
+apply plugin: 'com.jfrog.bintray'
+
+group           = 'me.mattak'
+version         = '0.0.1'
+def archiveName = 'aspect-ratio-layout'
+def userId      = 'mattak'
+def userName    = 'Takuma Maruyama'
+def userEmail   = 'mattak.me@gmail.com'
+def gitUrl      = 'https://github.com/mattak/AspectRatioLayout.git'
+def siteUrl     = 'https://github.com/mattak/AspectRatioLayout'
+
+android {
+    compileSdkVersion 22
+    buildToolsVersion "22.0.1"
+
+    defaultConfig {
+        minSdkVersion 8
+        targetSdkVersion 22
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+
+    jacoco {
+        version = '0.7.2.201409121644'
+    }
+
+    testOptions {
+        unitTests.returnDefaultValues = true
+    }
+
+    packagingOptions {
+        exclude 'LICENSE'
+    }
+}
+
+bintray {
+    user = System.getenv('BINTRAY_USER')
+    key = System.getenv('BINTRAY_KEY')
+
+    configurations = ['archives']
+
+    pkg {
+        repo       = 'maven'
+        name       = archiveName
+        vcsUrl     = gitUrl
+        websiteUrl = siteUrl
+        licenses   = ['Apache-2.0']
+        labels     = ['android']
+        publicDownloadNumbers = true
+    }
+}
+
+install {
+    repositories.mavenInstaller {
+        pom {
+            project {
+                packaging 'aar'
+                name      archiveName
+                url       siteUrl
+                licenses {
+                    license {
+                        name 'The Apache Software License, Version 2.0'
+                        url  'http://www.apache.org/licenses/LICENSE-2.0.txt'
+                    }
+                }
+                // developers.developer {
+                //     id    userId
+                //     name  userName
+                //     email userEmail
+                // }
+                scm {
+                    connection          gitUrl
+                    developerConnection gitUrl
+                    url                 siteUrl
+                }
+            }
+        }
+    }
+}
+
+task sourcesJar(type: Jar) {
+    from android.sourceSets.main.java.srcDirs
+    classifier = 'sources'
+}
+
+task javadoc(type: Javadoc) {
+    source = android.sourceSets.main.java.srcDirs
+    classpath += project.files(android.getBootClasspath().join(File.pathSeparator))
+}
+
+task javadocJar(type: Jar, dependsOn: javadoc) {
+    classifier = 'javadoc'
+    from javadoc.destinationDir
+}
+
+artifacts {
+    archives javadocJar
+    archives sourcesJar
+}
+
+task findConvensions << {
+    println project.getConvention()
+}
