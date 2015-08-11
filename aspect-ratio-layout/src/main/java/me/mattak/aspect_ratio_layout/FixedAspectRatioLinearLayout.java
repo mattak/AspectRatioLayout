@@ -10,6 +10,8 @@ import android.widget.LinearLayout;
 public class FixedAspectRatioLinearLayout extends LinearLayout {
     private int mAspectRatioWidth = 1;
     private int mAspectRatioHeight = 1;
+    private float mRelativeWidth = 1.0f;
+    private float mRelativeHeight = 1.0f;
 
     public FixedAspectRatioLinearLayout(Context context) {
         super(context);
@@ -37,6 +39,8 @@ public class FixedAspectRatioLinearLayout extends LinearLayout {
 
         mAspectRatioWidth = array.getInt(R.styleable.FixedAspectRatio_aspect_width, 1);
         mAspectRatioHeight = array.getInt(R.styleable.FixedAspectRatio_aspect_height, 1);
+        mRelativeWidth = array.getFloat(R.styleable.FixedAspectRatio_relative_width, 1.0f);
+        mRelativeHeight = array.getFloat(R.styleable.FixedAspectRatio_relative_height, 1.0f);
 
         array.recycle();
     }
@@ -57,6 +61,9 @@ public class FixedAspectRatioLinearLayout extends LinearLayout {
             finalWidth = originalWidth;
             finalHeight = calculatedHeight;
         }
+
+        finalWidth = (int)(finalWidth * mRelativeWidth);
+        finalHeight = (int)(finalHeight * mRelativeHeight);
 
         super.onMeasure(
                 MeasureSpec.makeMeasureSpec(finalWidth, MeasureSpec.EXACTLY),

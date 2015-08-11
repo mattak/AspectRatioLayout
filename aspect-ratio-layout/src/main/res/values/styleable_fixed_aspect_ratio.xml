@@ -3,5 +3,7 @@
     <declare-styleable name="FixedAspectRatio">
         <attr name="aspect_width" format="integer" />
         <attr name="aspect_height" format="integer" />
+        <attr name="relative_width" format="float" />
+        <attr name="relative_height" format="float" />
     </declare-styleable>
 </resources>
