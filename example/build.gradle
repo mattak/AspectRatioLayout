@@ -1,0 +1,19 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 22
+    buildToolsVersion "23.0.0 rc3"
+
+    defaultConfig {
+        applicationId "me.mattak.example.aspect_ratio_layout_example"
+        minSdkVersion 15
+        targetSdkVersion 22
+        versionCode 1
+        versionName "0.0.1"
+    }
+}
+
+dependencies {
+    compile project(':aspect-ratio-layout')
+    compile 'com.android.support:appcompat-v7:22.2.1'
+}
