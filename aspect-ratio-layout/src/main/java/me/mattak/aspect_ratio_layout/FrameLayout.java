@@ -6,31 +6,30 @@ import android.content.res.TypedArray;
 import android.os.Build;
 import android.util.AttributeSet;
 import android.view.View;
-import android.widget.FrameLayout;
 
-public class FixedAspectRatioFrameLayout extends FrameLayout {
+public class FrameLayout extends android.widget.FrameLayout {
     private int mAspectRatioWidth = 1;
     private int mAspectRatioHeight = 1;
     private float mRelativeWidth = 1.0f;
     private float mRelativeHeight = 1.0f;
 
-    public FixedAspectRatioFrameLayout(Context context) {
+    public FrameLayout(Context context) {
         super(context);
     }
 
-    public FixedAspectRatioFrameLayout(Context context, AttributeSet attrs) {
+    public FrameLayout(Context context, AttributeSet attrs) {
         super(context, attrs);
         init(context, attrs);
     }
 
     @TargetApi(Build.VERSION_CODES.HONEYCOMB)
-    public FixedAspectRatioFrameLayout(Context context, AttributeSet attrs, int defStyleAttr) {
+    public FrameLayout(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
         init(context, attrs);
     }
 
     @TargetApi(Build.VERSION_CODES.LOLLIPOP)
-    public FixedAspectRatioFrameLayout(Context context, AttributeSet attrs, int defStyleAttr, int defStyleRes) {
+    public FrameLayout(Context context, AttributeSet attrs, int defStyleAttr, int defStyleRes) {
         super(context, attrs, defStyleAttr, defStyleRes);
         init(context, attrs);
     }
@@ -63,8 +62,8 @@ public class FixedAspectRatioFrameLayout extends FrameLayout {
             finalHeight = calculatedHeight;
         }
 
-        finalWidth = (int)(finalWidth * mRelativeWidth);
-        finalHeight = (int)(finalHeight * mRelativeHeight);
+        finalWidth = (int) (finalWidth * mRelativeWidth);
+        finalHeight = (int) (finalHeight * mRelativeHeight);
 
         super.onMeasure(
                 MeasureSpec.makeMeasureSpec(finalWidth, MeasureSpec.EXACTLY),

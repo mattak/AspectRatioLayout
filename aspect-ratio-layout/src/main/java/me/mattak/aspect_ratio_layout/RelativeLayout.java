@@ -5,31 +5,30 @@ import android.content.Context;
 import android.content.res.TypedArray;
 import android.os.Build;
 import android.util.AttributeSet;
-import android.widget.RelativeLayout;
 
-public class FixedAspectRatioRelativeLayout extends RelativeLayout {
+public class RelativeLayout extends android.widget.RelativeLayout {
     private int mAspectRatioWidth = 1;
     private int mAspectRatioHeight = 1;
     private float mRelativeWidth = 1.0f;
     private float mRelativeHeight = 1.0f;
 
-    public FixedAspectRatioRelativeLayout(Context context) {
+    public RelativeLayout(Context context) {
         super(context);
     }
 
-    public FixedAspectRatioRelativeLayout(Context context, AttributeSet attrs) {
+    public RelativeLayout(Context context, AttributeSet attrs) {
         super(context, attrs);
         init(context, attrs);
     }
 
     @TargetApi(Build.VERSION_CODES.HONEYCOMB)
-    public FixedAspectRatioRelativeLayout(Context context, AttributeSet attrs, int defStyleAttr) {
+    public RelativeLayout(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
         init(context, attrs);
     }
 
     @TargetApi(Build.VERSION_CODES.LOLLIPOP)
-    public FixedAspectRatioRelativeLayout(Context context, AttributeSet attrs, int defStyleAttr, int defStyleRes) {
+    public RelativeLayout(Context context, AttributeSet attrs, int defStyleAttr, int defStyleRes) {
         super(context, attrs, defStyleAttr, defStyleRes);
         init(context, attrs);
     }
