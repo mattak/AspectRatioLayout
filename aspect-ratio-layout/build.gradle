@@ -7,7 +7,7 @@ apply plugin: 'com.github.dcendents.android-maven'
 apply plugin: 'com.jfrog.bintray'
 
 group           = 'me.mattak'
-version         = '0.0.1'
+version         = '0.1.0'
 def archiveName = 'aspect-ratio-layout'
 def userId      = 'mattak'
 def userName    = 'Takuma Maruyama'
