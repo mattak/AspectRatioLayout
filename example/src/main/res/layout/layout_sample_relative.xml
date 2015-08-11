@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:custom="http://schemas.android.com/apk/res-auto"
+    xmlns:aspect="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:gravity="center"
@@ -10,12 +10,9 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@android:color/black"
-        custom:aspect_height="1"
-        custom:aspect_width="1"
-        custom:relative_width="0.5"
-        custom:relative_height="0.5"
-        >
-
-    </me.mattak.aspect_ratio_layout.FixedAspectRatioFrameLayout>
+        aspect:aspect_height="1"
+        aspect:aspect_width="1"
+        aspect:relative_height="0.5"
+        aspect:relative_width="0.5" />
 
 </LinearLayout>

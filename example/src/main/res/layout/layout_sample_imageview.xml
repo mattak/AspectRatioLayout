@@ -6,12 +6,12 @@
     android:gravity="center"
     android:orientation="vertical">
 
-    <me.mattak.aspect_ratio_layout.FixedAspectRatioLinearLayout
+    <me.mattak.aspect_ratio_layout.ImageView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@android:color/black"
-        aspect:aspect_height="1"
-        aspect:aspect_width="1"
+        android:src="@drawable/s120x120"
+        aspect:aspect_height="120"
+        aspect:aspect_width="120"
         aspect:relative_height="0.5"
         aspect:relative_width="0.5" />
 

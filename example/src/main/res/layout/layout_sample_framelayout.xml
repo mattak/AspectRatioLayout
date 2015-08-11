@@ -11,6 +11,8 @@
         android:layout_height="match_parent"
         android:background="@android:color/black"
         aspect:aspect_height="1"
-        aspect:aspect_width="1" />
+        aspect:aspect_width="1"
+        aspect:relative_height="0.5"
+        aspect:relative_width="0.5" />
 
 </LinearLayout>
