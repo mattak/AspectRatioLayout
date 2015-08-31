@@ -5,6 +5,8 @@ plugins {
 apply plugin: 'com.android.library'
 apply plugin: 'com.github.dcendents.android-maven'
 apply plugin: 'com.jfrog.bintray'
+apply plugin: 'maven'
+apply plugin: 'signing'
 
 group           = 'me.mattak'
 version         = '0.1.0'
@@ -15,10 +17,16 @@ def userEmail   = 'mattak.me@gmail.com'
 def gitUrl      = 'https://github.com/mattak/AspectRatioLayout.git'
 def siteUrl     = 'https://github.com/mattak/AspectRatioLayout'
 def issueUrl    = 'https://github.com/mattak/AspectRatioLayout/issues'
+def projectName = 'Aspect Ratio Layout'
+def projectDescription = 'Aspect ratio based layout for android'
+def scmUrl      = 'scm:git@github.com:mattak/AspectRatioLayout.git'
+def licenseName = 'The Apache License, Version 2.0'
+def licenseUrl  = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+def isReleaseVersion = !version.endsWith('SNAPSHOT')
 
 android {
     compileSdkVersion 22
-    buildToolsVersion "22.0.1"
+    buildToolsVersion "23.0.0"
 
     defaultConfig {
         minSdkVersion 8
@@ -107,4 +115,53 @@ artifacts {
 
 task findConvensions << {
     println project.getConvention()
+}
+
+signing {
+    required { gradle.taskGraph.hasTask('uploadArchives') }
+    sign configurations.archives
+}
+
+uploadArchives {
+    repositories.mavenDeployer {
+        beforeDeployment { MavenDeployment deployment -> signing.signPom(deployment) }
+
+        def sonatypeRepo = isReleaseVersion ?
+            'https://oss.sonatype.org/service/local/staging/deploy/maven2/' :
+            'https://oss.sonatype.org/content/repositories/snapshots/'
+
+        repository(url: sonatypeRepo) {
+            authentication(userName: ossrhUsername, password: ossrhPassword)
+        }
+
+        pom.artifactId = archiveName
+        pom.project {
+            name projectName
+            packaging 'aar'
+            description projectDescription
+            url siteUrl
+
+            scm {
+                url scmUrl
+                connection scmUrl
+                developerConnection scmUrl
+            }
+
+            licenses {
+                license {
+                    name licenseName
+                    url  licenseUrl
+                    distribution 'repo'
+                }
+            }
+
+            developers {
+                developer {
+                    id    userId
+                    name  userName
+                    email userEmail
+                }
+            }
+        }
+    }
 }
