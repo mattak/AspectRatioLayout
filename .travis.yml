@@ -1,0 +1,8 @@
+language: java
+sudo: false
+jdk:
+  - oraclejdk8
+install: ./gradlew check
+cache:
+  directories:
+    - $HOME/.gradle/
