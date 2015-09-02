@@ -1,15 +1,12 @@
 # AspectRatioLayout
 
+[![Maven Central](https://maven-badges.herokuapp.com/maven-central/me.mattak/aspect-ratio-layout/badge.svg)](https://maven-badges.herokuapp.com/maven-central/me.mattak/aspect-ratio-layout)
+
 ## Install
 
 Write folloing lines into your build.gradle
 
-    repositories {
-        maven { url 'http://dl.bintray.com/mattak/maven' }
-    }
-    dependencies {
-        compile 'me.mattak:aspect-ratio-layout:0.1.0'
-    }
+    compile 'me.mattak:aspect-ratio-layout:0.1.0'
 
 ## Usage
 
