@@ -5,6 +5,10 @@ import android.content.Context;
 import android.os.Build;
 import android.util.AttributeSet;
 
+/**
+ * AspectRatioLayout for FrameLayout.
+ * Created by mattak on 2015/10/10.
+ */
 public class FrameLayout extends android.widget.FrameLayout {
     private Measurement mMeasurement = new Measurement();
 

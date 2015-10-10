@@ -5,6 +5,10 @@ import android.content.Context;
 import android.os.Build;
 import android.util.AttributeSet;
 
+/**
+ * RelativeLayout for LinearLayout.
+ * Created by mattak on 2015/10/10.
+ */
 public class RelativeLayout extends android.widget.RelativeLayout {
     private Measurement mMeasurement = new Measurement();
 
