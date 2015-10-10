@@ -6,6 +6,7 @@ import android.util.AttributeSet;
 import android.view.View;
 
 /**
+ * Measurement calculation for aspect based layout.
  * Created by pine on 15/10/10.
  */
 class Measurement {
