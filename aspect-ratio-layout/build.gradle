@@ -1,15 +1,9 @@
-// plugins {
-//     id 'com.jfrog.bintray' version '1.2'
-// }
-
 apply plugin: 'com.android.library'
-// apply plugin: 'com.github.dcendents.android-maven'
-// apply plugin: 'com.jfrog.bintray'
 apply plugin: 'maven'
 apply plugin: 'signing'
 
 group            = 'me.mattak'
-version          = '0.1.0'
+version          = '0.1.1'
 archivesBaseName = 'aspect-ratio-layout'
 
 ext {
@@ -29,12 +23,12 @@ ext {
 }
 
 android {
-    compileSdkVersion 22
-    buildToolsVersion "23.0.0"
+    compileSdkVersion 23
+    buildToolsVersion "23.0.1"
 
     defaultConfig {
         minSdkVersion 8
-        targetSdkVersion 22
+        targetSdkVersion 23
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
 
@@ -50,52 +44,6 @@ android {
         exclude 'LICENSE'
     }
 }
-
-// bintray {
-//     user = System.getenv('BINTRAY_USER')
-//     key = System.getenv('BINTRAY_KEY')
-// 
-//     configurations = ['archives']
-// 
-//     pkg {
-//         repo            = 'maven'
-//         name            = project.ext.archiveName
-//         vcsUrl          = project.ext.gitUrl
-//         websiteUrl      = project.ext.siteUrl
-//         issueTrackerUrl = project.ext.issueUrl
-//         licenses        = ['Apache-2.0']
-//         labels          = ['android']
-//         publicDownloadNumbers = true
-//     }
-// }
-// 
-// install {
-//     repositories.mavenInstaller {
-//         pom {
-//             project {
-//                 packaging 'aar'
-//                 name      project.ext.archiveName
-//                 url       project.ext.siteUrl
-//                 licenses {
-//                     license {
-//                         name 'The Apache Software License, Version 2.0'
-//                         url  'http://www.apache.org/licenses/LICENSE-2.0.txt'
-//                     }
-//                 }
-//                 // developers.developer {
-//                 //     id    userId
-//                 //     name  userName
-//                 //     email userEmail
-//                 // }
-//                 scm {
-//                     connection          project.ext.gitUrl
-//                     developerConnection project.ext.gitUrl
-//                     url                 project.ext.siteUrl
-//                 }
-//             }
-//         }
-//     }
-// }
 
 task sourcesJar(type: Jar) {
     from android.sourceSets.main.java.srcDirs
