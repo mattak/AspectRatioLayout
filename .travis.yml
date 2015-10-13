@@ -3,6 +3,7 @@ android:
   components:
     - build-tools-23.0.1
     - android-23
+    - extra
 install: ./gradlew check
 cache:
   directories:
