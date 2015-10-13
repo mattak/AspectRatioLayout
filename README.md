@@ -1,6 +1,4 @@
-# AspectRatioLayout
-
-[![Maven Central](https://maven-badges.herokuapp.com/maven-central/me.mattak/aspect-ratio-layout/badge.svg)](https://maven-badges.herokuapp.com/maven-central/me.mattak/aspect-ratio-layout)
+# AspectRatioLayout [![Maven Central](https://maven-badges.herokuapp.com/maven-central/me.mattak/aspect-ratio-layout/badge.svg)](https://maven-badges.herokuapp.com/maven-central/me.mattak/aspect-ratio-layout) [![Build Status](https://travis-ci.org/mattak/AspectRatioLayout.svg)](https://travis-ci.org/mattak/AspectRatioLayout)
 
 ## Install
 
