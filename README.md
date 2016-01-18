@@ -68,3 +68,7 @@ Also supports basic views.
 - ImageButton
 
 More details please see the example project layouts.
+
+# Contributors
+
+See [contributors](./CONTRIBUTORS.md).
