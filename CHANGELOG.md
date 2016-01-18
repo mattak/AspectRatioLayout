@@ -1,3 +1,9 @@
+# 0.1.2 (2016-01-18)
+
+Summary:
+
+- Support Button(#12), TextView(#13)
+
 # 0.1.1 (2015-10-10)
 
 Summary:
