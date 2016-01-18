@@ -4,7 +4,7 @@
 
 Write folloing lines into your build.gradle
 
-    compile 'me.mattak:aspect-ratio-layout:0.1.1'
+    compile 'me.mattak:aspect-ratio-layout:0.1.2'
 
 ## Usage
 
