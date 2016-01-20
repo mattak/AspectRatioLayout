@@ -32,7 +32,7 @@ Show FrameLayout (1:1 aspect, 50% of parent width size)
 
 ![framelayout](./art/framelayout_square.png)
 
-Show Image button (10:3 aspect, 50% of parent width size).
+Show Image button (120:120 aspect, 50% of parent width size).
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -49,8 +49,8 @@ Show Image button (10:3 aspect, 50% of parent width size).
         android:background="@null"
         android:scaleType="fitCenter"
         android:src="@drawable/s120x120"
-        aspect:aspect_height="3"
-        aspect:aspect_width="10"
+        aspect:aspect_height="120"
+        aspect:aspect_width="120"
         aspect:relative_height="0.5"
         aspect:relative_width="0.5" />
 
