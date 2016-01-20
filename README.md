@@ -66,6 +66,8 @@ Also supports basic views.
 - FrameLayout
 - ImageView
 - ImageButton
+- Button
+- TextView
 
 More details please see the example project layouts.
 
