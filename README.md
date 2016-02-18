@@ -68,6 +68,7 @@ Also supports basic views.
 - ImageButton
 - Button
 - TextView
+- View
 
 More details please see the example project layouts.
 
